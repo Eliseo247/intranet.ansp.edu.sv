@@ -5,13 +5,13 @@ metadata:
     openshift.io/generated-by: OpenShiftNewApp
   creationTimestamp: null
   labels:
-    app: openshift-wordpress
-  name: openshift-wordpress
+    app: wwwanspedusv
+  name: wwwanspedusv
 spec:
   replicas: 1
   selector:
-    app: openshift-wordpress
-    deploymentconfig: openshift-wordpress
+    app: wwwanspedusv
+    deploymentconfig: wwwanspedusv
   strategy:
     resources: {}
     rollingParams:
@@ -27,29 +27,29 @@ spec:
         openshift.io/generated-by: OpenShiftNewApp
       creationTimestamp: null
       labels:
-        app: openshift-wordpress
-        deploymentconfig: openshift-wordpress
+        app: wwwanspedusv
+        deploymentconfig: wwwanspedusv
     spec:
       output:
         to:
           kind: ImageStreamTag
-          name: openshift-wordpress:latest
+          name: wwwanspedusv:latest
       resources: {}
       source:
         git:
           ref: master
-          uri: https://github.com/Eliseo247/wordpress1.git
+          uri: https://github.com/Eliseo247/www.ansp.edu.sv.git
         type: Git
       strategy:
         dockerStrategy:
           from:
             kind: ImageStreamTag
-            name: centos:7
+            name: mariadb-103-rhel7:latest
         type: Docker
       containers:
-      - image: openshift-wordpress
+      - image: wwwanspedusv
         imagePullPolicy: Always
-        name: openshift-wordpress
+        name: wwwanspedusv
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -57,23 +57,22 @@ spec:
         terminationMessagePath: /dev/termination-log
         volumeMounts:
         - mountPath: /opt/app-root/src
-          name: wordpress-data
+          name: storage-wordpress
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-      - name: wordpress-data
+      - name: storage-wordpress 
         persistentVolumeClaim:
-          claimName: wordpress-data
+          claimName: storage-wordpress 
   triggers:
   - type: ConfigChange
   - imageChangeParams:
       automatic: true
       containerNames:
-      - openshift-wordpress
+      - openshift: wwwanspedusv
       from:
         kind: ImageStreamTag
-        name: openshift-wordpress:latest
+        name: wwwanspedusv:latest
     type: ImageChange
-status: {}
