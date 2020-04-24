@@ -1,4 +1,5 @@
-FROM php-73-rhel7
+FROM wordpress:latest
+
 
 VOLUME /opt/app-root/src/
 
