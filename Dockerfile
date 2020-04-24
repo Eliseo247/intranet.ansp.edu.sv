@@ -1,6 +1,8 @@
 FROM wwwanspedusv
 
-VOLUME /var/www/html
+VOLUME /opt/app-root/src/
+
+ADD . /opt/app-root/src/
 
 # Set labels used in OpenShift to describe the builder images
 LABEL io.k8s.description="Wordpress" \
