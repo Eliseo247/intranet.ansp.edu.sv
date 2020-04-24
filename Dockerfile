@@ -1,4 +1,4 @@
-FROM wwwanspedusv
+FROM php-73-rhel7
 
 VOLUME /opt/app-root/src/
 
