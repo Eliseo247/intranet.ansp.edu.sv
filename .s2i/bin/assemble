@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-ADD wordpress-5.4.tar.gz/opt/app-root/src
+mv wordpress-5.4.tar.gz/opt/app-root/src
 
 
 source ${PHP_CONTAINER_SCRIPTS_PATH}/common.sh
