@@ -1,4 +1,4 @@
-FROM wordpress:latest
+FROM wwwanspedusv:latest
 
 
 VOLUME /opt/app-root/src/
