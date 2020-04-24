@@ -1,4 +1,4 @@
-FROM php-73-rhel7:latest
+FROM wwwanspedusv
 
 VOLUME /var/www/html
 
