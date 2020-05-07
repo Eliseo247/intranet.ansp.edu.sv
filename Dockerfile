@@ -1,28 +1,23 @@
- 
 FROM php-73-rhel7:latest  
-MAINTAINER Eliseo Ramirez
-
+MAINTAINER Josue Ramirez
 USER root
 
-#ADD https://download.moodle.org/stable38/moodle-latest-38.tgz /
-#RUN chmod a+rw /moodle-latest-38.tgz
+ADD https://download.moodle.org/stable38/moodle-latest-38.tgz /
+RUN chmod a+rw /moodle-latest-38.tgz
 
-RUN mkdir /opt/app-root/moodledata
-RUN chmod 775 /opt/app-root/moodledata
-RUN chmod 775 /opt/app-root/src
 ADD php.ini /opt/app-root/etc/php.ini
-COPY run_moodle.sh /
+COPY run_wordpress.sh /
 
-VOLUME /opt/app-root/moodledata
+VOLUME /opt/app-root/src
 USER 907
 EXPOSE 8080
 
 CMD ["/bin/bash","/run_moodle.sh"]
-# Set labels used in OpenShift to describe the builder images
-LABEL io.k8s.description="moodle" \
-      io.k8s.display-name="moodle apache redhat " \
+# Set labels usados en OpenShift para describir la construccion de la imagen
+LABEL io.k8s.description="wordpress" \
+      io.k8s.display-name="wordpress apache php " \
       io.openshift.expose-services="8080:http" \
-      io.openshift.tags="builder,moodle,apache" \
+      io.openshift.tags="builder,wordpress,apache" \
       io.openshift.min-memory="3Gi" \
       io.openshift.min-cpu="2" \
       io.openshift.non-scalable="false"
