@@ -59,6 +59,6 @@ process_extending_files ${APP_DATA}/php-pre-start/ ${PHP_CONTAINER_SCRIPTS_PATH}
 #############################################################################################################
 # install wordpress if not in persistentvolume
 if [ ! -f /opt/app-root/src/index.php ]; then
-  cp -rf /moodle-latest-38.tgz /opt/app-root/src
+  cp -f /wordpress-5.4.tar.gz /opt/app-root/src
     fi
 exec httpd -D FOREGROUND
