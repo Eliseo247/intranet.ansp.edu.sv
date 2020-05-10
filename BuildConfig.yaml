@@ -1,0 +1,49 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: '2020-04-24T20:36:55Z'
+  labels:
+    app: wwwanspedusv
+  name: wwwanspedusv
+  namespace: ansp
+  resourceVersion: '17542163'
+  selfLink: /apis/build.openshift.io/v1/namespaces/ansp/buildconfigs/wwwanspedusv
+  uid: 5633f13e-866b-11ea-953c-000d3a8c5974
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'wwwanspedusv:latest'
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      uri: 'https://github.com/Eliseo247/www.ansp.edu.sv.git'
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 'php-73-rhel7:latest'
+        namespace: ansp
+    type: Source
+  successfulBuildsHistoryLimit: 5
+  triggers:
+    - github:
+        secret: 9-kKwRyRfoz0NhxTt1_A
+      type: GitHub
+    - generic:
+        secret: 0gaRRLy4-kpaZrDfyYtC
+      type: Generic
+    - type: ConfigChange
+    - imageChange:
+        lastTriggeredImageID: >-
+          registry.redhat.io/rhscl/php-73-rhel7@sha256:7c30340e400b5a885129169d74106daddfa6cb3196c0ac5de355551b9a5f0e98
+      type: ImageChange
+status:
+  lastVersion: 1
