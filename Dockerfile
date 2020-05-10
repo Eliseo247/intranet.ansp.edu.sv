@@ -2,8 +2,8 @@ FROM php-73-rhel7:latest
 MAINTAINER Josue Ramirez
 
 USER root
-ADD https://download.moodle.org/stable38/moodle-latest-38.tgz /
-RUN chmod 777 /moodle-latest-38.tgz
+ADD wordpress-5.4.tar.gz /
+RUN chmod 777 /wordpress-5.4.tar.gz
 
 ADD php.ini /opt/app-root/etc/php.ini
 COPY run_wordpress.sh /
