@@ -5,11 +5,11 @@ metadata:
     openshift.io/generated-by: OpenShiftNewApp
   creationTimestamp: '2020-04-24T20:36:55Z'
   labels:
-    app: wwwanspedusv
-  name: wwwanspedusv
+    app: intranet
+  name: intranet
   namespace: ansp
   resourceVersion: '17542163'
-  selfLink: /apis/build.openshift.io/v1/namespaces/ansp/buildconfigs/wwwanspedusv
+  selfLink: /apis/build.openshift.io/v1/namespaces/ansp/buildconfigs/intranet
   uid: 5633f13e-866b-11ea-953c-000d3a8c5974
 spec:
   failedBuildsHistoryLimit: 5
@@ -17,13 +17,13 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: 'wwwanspedusv:latest'
+      name: 'intranet:latest'
   postCommit: {}
   resources: {}
   runPolicy: Serial
   source:
     git:
-      uri: 'https://github.com/Eliseo247/www.ansp.edu.sv.git'
+      uri: 'https://github.com/Eliseo247/intranet.git'
     type: Git
   strategy:
     sourceStrategy:
