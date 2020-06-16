@@ -6,18 +6,18 @@ metadata:
   creationTimestamp: '2020-04-24T20:36:55Z'
   generation: 3
   labels:
-    app: wwwanspedusv
-  name: wwwanspedusv
+    app: intranet
+  name: intranet
   namespace: ansp
   resourceVersion: '17542613'
-  selfLink: /apis/apps.openshift.io/v1/namespaces/ansp/deploymentconfigs/wwwanspedusv
+  selfLink: /apis/apps.openshift.io/v1/namespaces/ansp/deploymentconfigs/intranet
   uid: 564e58ec-866b-11ea-953c-000d3a8c5974
 spec:
   replicas: 1
   revisionHistoryLimit: 10
   selector:
-    app: wwwanspedusv
-    deploymentconfig: wwwanspedusv
+    app: intranet
+    deploymentconfig: intranet
   strategy:
     activeDeadlineSeconds: 21600
     resources: {}
@@ -34,14 +34,14 @@ spec:
         openshift.io/generated-by: OpenShiftNewApp
       creationTimestamp: null
       labels:
-        app: wwwanspedusv
-        deploymentconfig: wwwanspedusv
+        app: intranet
+        deploymentconfig: intranet
     spec:
       containers:
         - image: >-
-            docker-registry.default.svc:5000/ansp/wwwanspedusv@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
+            docker-registry.default.svc:5000/ansp/intranet@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
           imagePullPolicy: Always
-          name: wwwanspedusv
+          name: intranet
           ports:
             - containerPort: 8443
               protocol: TCP
@@ -59,22 +59,22 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-        - name: wordpress
+        - name: intranet
           persistentVolumeClaim:
-            claimName: wordpress
+            claimName: intranet
   test: false
   triggers:
     - type: ConfigChange
     - imageChangeParams:
         automatic: true
         containerNames:
-          - wwwanspedusv
+          - intranet
         from:
           kind: ImageStreamTag
-          name: 'wwwanspedusv:latest'
+          name: 'intranet:latest'
           namespace: ansp
         lastTriggeredImage: >-
-          docker-registry.default.svc:5000/ansp/wwwanspedusv@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
+          docker-registry.default.svc:5000/ansp/intranet@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
       type: ImageChange
 status:
   availableReplicas: 1
@@ -86,7 +86,7 @@ status:
       type: Available
     - lastTransitionTime: '2020-04-24T20:38:33Z'
       lastUpdateTime: '2020-04-24T20:38:36Z'
-      message: replication controller "wwwanspedusv-2" successfully rolled out
+      message: replication controller "intranet-2" successfully rolled out
       reason: NewReplicationControllerAvailable
       status: 'True'
       type: Progressing
