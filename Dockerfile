@@ -15,7 +15,7 @@ EXPOSE 8080
 
 CMD ["/bin/bash","/run_wordpress.sh"]
 # Set labels usados en OpenShift para describir la construccion de la imagen
-LABEL io.k8s.description="wordpress" \
+LABEL io.k8s.description="wordpress-intranet" \
       io.k8s.display-name="wordpress apache php " \
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="builder,wordpress,apache" \
