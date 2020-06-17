@@ -6,8 +6,8 @@ metadata:
   creationTimestamp: '2020-04-24T20:36:55Z'
   generation: 3
   labels:
-    app: intranet.ansp.edu.sv
-  name: intranet.ansp.edu.sv
+    app: intranetanspedusv
+  name: intranetanspedusv
   namespace: ansp
   resourceVersion: '17542613'
   selfLink: /apis/apps.openshift.io/v1/namespaces/ansp/deploymentconfigs/intranet.ansp.edu.sv
@@ -71,7 +71,7 @@ spec:
           - intranet
         from:
           kind: ImageStreamTag
-          name: 'intranet.ansp.edu.sv:latest'
+          name: 'intranetanspedusv:latest'
           namespace: ansp
         lastTriggeredImage: >-
           docker-registry.default.svc:5000/ansp/intranet.ansp.edu.sv@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
