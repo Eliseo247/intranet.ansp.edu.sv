@@ -2,8 +2,8 @@ FROM php-73-rhel7:latest
 MAINTAINER Josue Ramirez
 
 USER root
-ADD wordpress-5.4.tar.gz /
-RUN chmod 777 /wordpress
+ADD wordpress-5.4.tar.gz /opt/app-root/src/
+RUN chmod 775 /opt/app-root/src/wordpress
 
 ADD php.ini /opt/app-root/etc/php.ini
 COPY run_wordpress.sh /
