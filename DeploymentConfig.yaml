@@ -6,18 +6,18 @@ metadata:
   creationTimestamp: '2020-04-24T20:36:55Z'
   generation: 3
   labels:
-    app: intranet
-  name: intranet
+    app: intranet.ansp.edu.sv
+  name: intranet.ansp.edu.sv
   namespace: ansp
   resourceVersion: '17542613'
-  selfLink: /apis/apps.openshift.io/v1/namespaces/ansp/deploymentconfigs/intranet
+  selfLink: /apis/apps.openshift.io/v1/namespaces/ansp/deploymentconfigs/intranet.ansp.edu.sv
   uid: 564e58ec-866b-11ea-953c-000d3a8c5974
 spec:
   replicas: 1
   revisionHistoryLimit: 10
   selector:
-    app: intranet
-    deploymentconfig: intranet
+    app: intranet.ansp.edu.sv
+    deploymentconfig: intranet.ansp.edu.sv
   strategy:
     activeDeadlineSeconds: 21600
     resources: {}
@@ -34,14 +34,14 @@ spec:
         openshift.io/generated-by: OpenShiftNewApp
       creationTimestamp: null
       labels:
-        app: intranet
-        deploymentconfig: intranet
+        app: intranet.ansp.edu.sv
+        deploymentconfig: intranet.ansp.edu.sv
     spec:
       containers:
         - image: >-
             docker-registry.default.svc:5000/ansp/intranet@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
           imagePullPolicy: Always
-          name: intranet
+          name: intranet.ansp.edu.sv
           ports:
             - containerPort: 8443
               protocol: TCP
@@ -71,10 +71,10 @@ spec:
           - intranet
         from:
           kind: ImageStreamTag
-          name: 'intranet:latest'
+          name: 'intranet.ansp.edu.sv:latest'
           namespace: ansp
         lastTriggeredImage: >-
-          docker-registry.default.svc:5000/ansp/intranet@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
+          docker-registry.default.svc:5000/ansp/intranet.ansp.edu.sv@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
       type: ImageChange
 status:
   availableReplicas: 1
