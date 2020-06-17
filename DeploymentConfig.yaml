@@ -52,7 +52,7 @@ spec:
           terminationMessagePolicy: File
           volumeMounts:
             - mountPath: /opt/app-root/src
-              name: wordpress
+              name: intranet
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
