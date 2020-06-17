@@ -41,7 +41,7 @@ spec:
         - image: >-
             docker-registry.default.svc:5000/ansp/intranet@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
           imagePullPolicy: Always
-          name: intranet.ansp.edu.sv
+          name: intranetanspedusv
           ports:
             - containerPort: 8443
               protocol: TCP
