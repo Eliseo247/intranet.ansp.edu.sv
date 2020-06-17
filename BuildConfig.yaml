@@ -9,7 +9,7 @@ metadata:
   name: intranetanspedusv
   namespace: ansp
   resourceVersion: '17542163'
-  selfLink: /apis/build.openshift.io/v1/namespaces/ansp/buildconfigs/intranet.ansp.edu.sv
+  selfLink: /apis/build.openshift.io/v1/namespaces/ansp/buildconfigs/intranetanspedusv
   uid: 5633f13e-866b-11ea-953c-000d3a8c5974
 spec:
   failedBuildsHistoryLimit: 5
