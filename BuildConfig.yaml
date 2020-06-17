@@ -5,8 +5,8 @@ metadata:
     openshift.io/generated-by: OpenShiftNewApp
   creationTimestamp: '2020-04-24T20:36:55Z'
   labels:
-    app: intranet.ansp.edu.sv
-  name: intranet.ansp.edu.sv
+    app: intranetanspedusv
+  name: intranetanspedusv
   namespace: ansp
   resourceVersion: '17542163'
   selfLink: /apis/build.openshift.io/v1/namespaces/ansp/buildconfigs/intranet.ansp.edu.sv
@@ -17,7 +17,7 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: 'intranet.ansp.edu.sv:latest'
+      name: 'intranetanspedusv:latest'
   postCommit: {}
   resources: {}
   runPolicy: Serial
