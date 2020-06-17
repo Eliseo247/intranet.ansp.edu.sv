@@ -3,7 +3,7 @@ MAINTAINER Josue Ramirez
 
 USER root
 ADD wordpress-5.4.tar.gz /
-RUN chmod 777 /latest
+RUN chmod 777 /wordpress
 
 ADD php.ini /opt/app-root/etc/php.ini
 COPY run_wordpress.sh /
