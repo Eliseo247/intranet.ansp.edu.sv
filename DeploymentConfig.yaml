@@ -9,7 +9,7 @@ metadata:
     app: intranetanspedusv
   name: intranetanspedusv
   namespace: ansp
-  resourceVersion: '17542613'
+  resourceVersion: '30427816'
   selfLink: /apis/apps.openshift.io/v1/namespaces/ansp/deploymentconfigs/intranetanspedusv
   uid: 564e58ec-866b-11ea-953c-000d3a8c5974
 spec:
@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
         - image: >-
-            docker-registry.default.svc:5000/ansp/intranet@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
+            docker-registry.default.svc:5000/ansp/intranetanspedusv@sha256:1bea3c74e0b6178a6df6ff6833624ffd26d5ad0538baa6927bed9e7e3e9087ff
           imagePullPolicy: Always
           name: intranetanspedusv
           ports:
@@ -68,7 +68,7 @@ spec:
     - imageChangeParams:
         automatic: true
         containerNames:
-          - intranet
+          - intranetanspedusv
         from:
           kind: ImageStreamTag
           name: 'intranetanspedusv:latest'
@@ -79,17 +79,17 @@ spec:
 status:
   availableReplicas: 1
   conditions:
-    - lastTransitionTime: '2020-04-24T20:37:13Z'
-      lastUpdateTime: '2020-04-24T20:37:13Z'
-      message: Deployment config has minimum availability.
-      status: 'True'
-      type: Available
     - lastTransitionTime: '2020-04-24T20:38:33Z'
       lastUpdateTime: '2020-04-24T20:38:36Z'
-      message: replication controller "intranet-2" successfully rolled out
+      message: replication controller "wwwanspedusv-2" successfully rolled out
       reason: NewReplicationControllerAvailable
       status: 'True'
       type: Progressing
+    - lastTransitionTime: '2020-06-12T12:11:52Z'
+      lastUpdateTime: '2020-06-12T12:11:52Z'
+      message: Deployment config has minimum availability.
+      status: 'True'
+      type: Available
   details:
     causes:
       - type: ConfigChange
