@@ -34,8 +34,8 @@ spec:
         openshift.io/generated-by: OpenShiftNewApp
       creationTimestamp: null
       labels:
-        app: intranet.ansp.edu.sv
-        deploymentconfig: intranet.ansp.edu.sv
+        app: intranetanspedusv
+        deploymentconfig: intranetanspedusv
     spec:
       containers:
         - image: >-
