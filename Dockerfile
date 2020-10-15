@@ -11,7 +11,7 @@ RUN chmod 777 /run_wordpress.sh
 
 VOLUME /opt/app-root/src
 USER 907
-EXPOSE 8080
+EXPOSE 8080 80
 
 CMD ["/bin/bash","/run_wordpress.sh"]
 # Set labels usados en OpenShift para describir la construccion de la imagen
