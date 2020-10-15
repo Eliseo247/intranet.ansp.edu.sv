@@ -4,7 +4,7 @@ MAINTAINER Josue Ramirez
 USER root
 ADD wordpress-5.4.tar.gz /opt/app-root/src/
 RUN chmod 775 /opt/app-root/src/wordpress
-RUN mv -rf /opt/app-root/src/wordpress/*  /opt/app-root/src
+RUN cp -rf /opt/app-root/src/wordpress/*  /opt/app-root/src
 
 ADD php.ini /opt/app-root/etc/php.ini
 COPY run_wordpress.sh /
@@ -12,7 +12,7 @@ RUN chmod 777 /run_wordpress.sh
 
 VOLUME /opt/app-root/src
 USER 907
-EXPOSE 8080 80 443
+EXPOSE 8080
 
 CMD ["/bin/bash","/run_wordpress.sh"]
 # Set labels usados en OpenShift para describir la construccion de la imagen
