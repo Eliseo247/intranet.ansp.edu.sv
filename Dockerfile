@@ -1,9 +1,12 @@
 FROM php-73-rhel7:latest  
 MAINTAINER Josue Ramirez
 
+
 COPY index.html /opt/app-root/src
+USER root
 RUN chmod 777 /opt/app-root/src
 COPY run_wordpress.sh /
+USER root
 RUN chmod 777 /run_wordpress.sh
 
 
